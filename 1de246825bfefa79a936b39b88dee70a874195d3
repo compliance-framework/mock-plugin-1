@@ -1,0 +1,4 @@
+lisa-design:
+- release.prerelease: auto is required by compliance-framework/workflows release-go-plugin.yml; without it goreleaser would publish an -rcN tag as a full release.
+- replace_existing_artifacts: true so a re-run of the release workflow on the same tag can overwrite assets instead of failing.
+- archives.format migrated to formats: [tar.gz] only because goreleaser check flags it deprecated (check exits non-zero); archive output is unchanged.
