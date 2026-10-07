@@ -1,0 +1,25 @@
+# Publishes :pr-<number> previews for PRs labelled `preview` (no :main previews for plugins) (W1-S1).
+name: preview
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    uses: compliance-framework/workflows/.github/workflows/preview.yml@084cc5d5ee6a40455f84b4f3108cfb254654ae28
+    with:
+      kind: go-plugin
+      on-main: false
+    permissions:
+      contents: read
+      packages: write
