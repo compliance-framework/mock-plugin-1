@@ -1,0 +1,32 @@
+# Trial of the shared plugin CI (W1-S1), pinned to a commit of compliance-framework/workflows.
+name: ci
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+  push:
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  ci:
+    uses: compliance-framework/workflows/.github/workflows/ci-go-plugin.yml@a94553bdc479fac47fbea7febbf57dcb615dbc87
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: read
+      security-events: write
+    secrets: inherit
+
+  notify:
+    needs: [ci]
+    if: failure()
+    uses: compliance-framework/workflows/.github/workflows/notify-failure.yml@a94553bdc479fac47fbea7febbf57dcb615dbc87
+    with:
+      # Build cmd/notify from the same commit this workflow is called at.
+      workflows-ref: a94553bdc479fac47fbea7febbf57dcb615dbc87
+    permissions:
+      actions: read
+      contents: read
+    secrets: inherit
