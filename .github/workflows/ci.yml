@@ -1,4 +1,4 @@
-# Trial of the shared plugin CI and release checks (W1-S1), pinned to a commit of compliance-framework/workflows.
+# Trial of the shared plugin CI and release checks (W1-S1), tracking compliance-framework/workflows main (until v1 is tagged).
 name: ci
 
 on:
@@ -12,7 +12,7 @@ permissions: {}
 
 jobs:
   ci:
-    uses: compliance-framework/workflows/.github/workflows/ci-go-plugin.yml@ra/w1-s1-t05b-repo-settings-workflow
+    uses: compliance-framework/workflows/.github/workflows/ci-go-plugin.yml@main
     permissions:
       actions: read
       contents: read
@@ -21,17 +21,17 @@ jobs:
     secrets: inherit
 
   release-checks:
-    uses: compliance-framework/workflows/.github/workflows/release-checks.yml@ra/w1-s1-t05b-repo-settings-workflow
+    uses: compliance-framework/workflows/.github/workflows/release-checks.yml@main
     permissions:
       contents: read
 
   notify:
     needs: [ci, release-checks]
     if: failure()
-    uses: compliance-framework/workflows/.github/workflows/notify-failure.yml@ra/w1-s1-t05b-repo-settings-workflow
+    uses: compliance-framework/workflows/.github/workflows/notify-failure.yml@main
     with:
       # Build cmd/notify from the same commit this workflow is called at.
-      workflows-ref: ra/w1-s1-t05b-repo-settings-workflow
+      workflows-ref: main
     permissions:
       actions: read
       contents: read
