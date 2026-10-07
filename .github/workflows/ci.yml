@@ -12,7 +12,7 @@ permissions: {}
 
 jobs:
   ci:
-    uses: compliance-framework/workflows/.github/workflows/ci-go-plugin.yml@084cc5d5ee6a40455f84b4f3108cfb254654ae28
+    uses: compliance-framework/workflows/.github/workflows/ci-go-plugin.yml@ra/w1-s1-t05b-repo-settings-workflow
     permissions:
       actions: read
       contents: read
@@ -21,17 +21,17 @@ jobs:
     secrets: inherit
 
   release-checks:
-    uses: compliance-framework/workflows/.github/workflows/release-checks.yml@084cc5d5ee6a40455f84b4f3108cfb254654ae28
+    uses: compliance-framework/workflows/.github/workflows/release-checks.yml@ra/w1-s1-t05b-repo-settings-workflow
     permissions:
       contents: read
 
   notify:
     needs: [ci, release-checks]
     if: failure()
-    uses: compliance-framework/workflows/.github/workflows/notify-failure.yml@084cc5d5ee6a40455f84b4f3108cfb254654ae28
+    uses: compliance-framework/workflows/.github/workflows/notify-failure.yml@ra/w1-s1-t05b-repo-settings-workflow
     with:
       # Build cmd/notify from the same commit this workflow is called at.
-      workflows-ref: 084cc5d5ee6a40455f84b4f3108cfb254654ae28
+      workflows-ref: ra/w1-s1-t05b-repo-settings-workflow
     permissions:
       actions: read
       contents: read
