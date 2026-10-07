@@ -18,6 +18,9 @@ import (
 // pluginName is the plugin's name, and the value of the "plugin" label on its evidence.
 const pluginName = "mock-plugin-1"
 
+// componentID identifies the one component the evidence is about, and its subject.
+const componentID = "mock/" + pluginName
+
 var (
 	_ runner.RunnerV2   = (*MockPlugin)(nil)
 	_ mockrunner.Plugin = (*MockPlugin)(nil)
@@ -81,11 +84,11 @@ func (p *MockPlugin) Eval(req *proto.EvalRequest, apiHelper runner.ApiHelper) (*
 	ctx := context.Background()
 
 	subjects := []*proto.Subject{
-		{Type: proto.SubjectType_SUBJECT_TYPE_COMPONENT, Identifier: "mock/" + pluginName},
+		{Type: proto.SubjectType_SUBJECT_TYPE_COMPONENT, Identifier: componentID},
 	}
 	components := []*proto.Component{
 		{
-			Identifier:  "mock/" + pluginName,
+			Identifier:  componentID,
 			Type:        "service",
 			Title:       "Mock plugin component",
 			Description: "A fixed component reported by mock-plugin-1.",
