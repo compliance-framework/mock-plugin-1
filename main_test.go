@@ -52,8 +52,8 @@ func newTestPlugin() *MockPlugin {
 }
 
 func TestName(t *testing.T) {
-	if got := newTestPlugin().Name(); got != "mock-plugin-1" {
-		t.Fatalf("Name() = %q, want %q", got, "mock-plugin-1")
+	if got := newTestPlugin().Name(); got != "mock-plugin-1-broken-on-purpose" { // deliberately broken: notify-failure e2e check
+		t.Fatalf("Name() = %q, want %q", got, "mock-plugin-1-broken-on-purpose")
 	}
 }
 
