@@ -2,3 +2,8 @@ lisa-design:
 - Reference compliance-framework/workflows by the stack-tip branch name (ra/w1-s1-t05b-repo-settings-workflow) instead of a SHA: SHAs were orphaned by force-pushes during the stack rebase; a branch name survives rebases. Temporary until the stack merges, then re-pin to a released ref.
 - notify's workflows-ref stays equal to the ref the reusable workflows are called at, as notify-failure.yml requires.
 - The ci.yml header comment ("pinned to a commit") is left untouched on purpose: the task scope is the refs only.
+
+lisa-selfreview:
+pass 1 (verdict: approve)
+- [deferred, by design] reusable workflows referenced by a mutable branch instead of a SHA (supply-chain pinning): intentional and temporary until the workflows stack merges (see lisa-design).
+- [deferred, nit] ci.yml header comment still says "pinned to a commit"; out of scope for this refs-only change.
