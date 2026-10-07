@@ -7,3 +7,6 @@ lisa-design:
 - go-plugin pinned at v1.7.0 to match agent v0.9.0 (go get had pulled v1.8.0).
 - plugin_test.go builds the binary and drives it via go-plugin with runner.HandshakeConfig (dispense "runner", Configure/Init/Eval with a fake ApiHelper over the broker); skipped under -short.
 - .goreleaser.yaml copied verbatim from plugin-template (binary: plugin, linux+darwin), including its deprecated archives.format key.
+
+lisa-selfreview:
+- pass 1: CORE-DUP-001 should-fix main.go Eval: "mock/"+pluginName duplicated for subject and component identifiers (fp 8a248ebb9007)
