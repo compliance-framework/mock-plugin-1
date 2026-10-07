@@ -1,8 +1,0 @@
-lisa-design:
-- Plugin type MockPlugin implements agent runner.RunnerV2 and mock-agent runner.Plugin (Name() == "mock-plugin-1"); compile-time assertions keep both real.
-- Configure accepts any config and stores only policy data; there is no plugin config to validate.
-- Eval runs policy_manager.PolicyProcessor.GenerateResults per policy path against a fixed input {plugin, enabled: true}; one evidence per policy result, so testdata/policies (one policy) yields exactly one.
-- Evidence label "plugin"=mock-plugin-1 feeds the evidence UUID seed; keep it stable so evidence identity doesn't change between releases.
-- go-plugin pinned at v1.7.0 to match agent v0.9.0 (go get had pulled v1.8.0).
-- plugin_test.go builds the binary and drives it via go-plugin with runner.HandshakeConfig (dispense "runner", Configure/Init/Eval with a fake ApiHelper over the broker); skipped under -short.
-- .goreleaser.yaml copied verbatim from plugin-template (binary: plugin, linux+darwin), including its deprecated archives.format key.
