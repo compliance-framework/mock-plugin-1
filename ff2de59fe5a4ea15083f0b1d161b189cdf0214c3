@@ -1,0 +1,2 @@
+lisa-addressed:
+- pass 1 fix: hoisted "mock/"+pluginName into const componentID (CORE-DUP-001, fp 8a248ebb9007)
