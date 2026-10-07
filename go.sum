@@ -68,8 +68,8 @@ github.com/compliance-framework/agent v0.9.0 h1:zg4S508qifuInVK/gvo+J1n4DiTFjSZ6
 github.com/compliance-framework/agent v0.9.0/go.mod h1:jyGyMyqX6OJuVT/3UwbTpp/uE+urFVliSGhy7cMJVBE=
 github.com/compliance-framework/api v0.21.0 h1:FFkeg9tUrIPBOt0pbH10NJhoOcdYYhdepyxDltA6mg4=
 github.com/compliance-framework/api v0.21.0/go.mod h1:TrmFnqr+UBvgvKWspYVEnmZSLMyoPbc2i2/jPK7EUww=
-github.com/compliance-framework/mock-agent v0.0.0-20261007171056-559904c61c2b h1:/Yhkpa0IF6CbwotBhjr0it2qcbQ5YZRbrE9FkgUyuhw=
-github.com/compliance-framework/mock-agent v0.0.0-20261007171056-559904c61c2b/go.mod h1:9mSB7bmLOgwfh+KjN8hl2Ji9B07FQg8YBdcFUzWGcyk=
+github.com/compliance-framework/mock-agent v0.1.0 h1:mTnb63fSWI+XZjfYS/BdM6GxDa+39816PN135/PSlqU=
+github.com/compliance-framework/mock-agent v0.1.0/go.mod h1:pwpEl5uIujBa2IxB321AktmZ+SoKzBDWHrbGpp4R2dE=
 github.com/containerd/errdefs v1.0.0 h1:tg5yIfIlQIrxYtu9ajqY42W3lpS19XqdxRQeEwYG8PI=
 github.com/containerd/errdefs v1.0.0/go.mod h1:+YBYIdtsnF4Iw6nWZhJcqGSg/dwvV7tyJ/kCkyJ2k+M=
 github.com/containerd/errdefs/pkg v0.3.0 h1:9IKJ06FvyNlexW690DXuQNx2KA2cUJXx151Xdx3ZPPE=
