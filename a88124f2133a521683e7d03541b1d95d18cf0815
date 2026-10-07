@@ -1,0 +1,5 @@
+lisa-design:
+- Pinned to the full commit SHA a94553b (head of compliance-framework/workflows#5), not @v1: this is a trial of the unreleased shared workflows.
+- notify passes workflows-ref equal to the pinned SHA, because a reusable workflow cannot see the ref it was called at (default v1 would build a different cmd/notify).
+- pull_request listens for `edited` too, as the shared README recommends, so pr-title re-checks edited titles.
+- Top-level permissions: {}; each job grants only what the called workflow documents (ci: actions/contents/pull-requests read + security-events write for osv-scanner; notify: actions/contents read).
