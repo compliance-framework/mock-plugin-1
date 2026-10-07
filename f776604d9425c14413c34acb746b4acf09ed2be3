@@ -1,0 +1,8 @@
+lisa-design:
+- Every shared-workflow ref (and notify's workflows-ref) is the full SHA 084cc5d5ee6a40455f84b4f3108cfb254654ae28 (head of workflows#12), not @v1: the release workflows are unreleased.
+- release-please-config.json copies defaults.json verbatim (same layout) plus packages {".": {release-type: go}}, so the release-please drift check prints no warnings.
+- Manifest seeded at {".": "0.0.0"}: no tags exist yet, so the first feat PR yields 0.1.0 (bump-minor-pre-major).
+- ci.yml pull_request types gain labeled/unlabeled because release-checks reads labels from the event (README); release-checks job lives in ci.yml so it is a required-able check, and notify needs both ci and release-checks.
+- preview.yml uses README triggers (opened, synchronize, reopened, labeled) with kind go-plugin, on-main false: only PRs labelled `preview` publish :pr-N.
+- release.yml grants contents: write + packages: write (release-go-plugin.yml: goreleaser attaches archives; gooci uploads; release-finished prunes).
+- go.mod pins mock-agent at a pseudo-version on purpose: the first release PR is EXPECTED to fail internal-deps-final until ccf-bump (stage 3) bumps it.
