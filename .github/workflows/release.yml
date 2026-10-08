@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   release:
-    uses: compliance-framework/workflows/.github/workflows/release-go-plugin.yml@d72b127a668e93d3eb503f775fb4c2bbb0bfdef9 # v1.2.0
+    uses: compliance-framework/workflows/.github/workflows/release-go-plugin.yml@ec58cea2c02f12b5dad6b23a7bfdc84360f59f11 # v1.3.0
     with:
       protocol-version: "2"
     permissions:
