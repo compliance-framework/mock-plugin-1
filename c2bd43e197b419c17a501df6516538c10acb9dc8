@@ -3,3 +3,6 @@ lisa-design:
 - Reusable workflows stay at @main with workflows-ref: main on purpose (spec W1-S3-MOCK-NOTIFY-CALLERS: do not pin a SHA or v1 in the mocks); CORE-CI-001 mutable-ref does not apply to this deliberate choice.
 - actions: read dropped: notify-failure.yml needs only contents: read (docs/notify.md).
 - Existing comments above workflows-ref kept; no other lines change.
+
+lisa-selfreview:
+- pass 1: verdict approve, no findings. Checked: actionlint v1.7.12 clean on ci.yml; job shape matches notify-failure.yml's documented call (needs input, contents: read, secrets: inherit); needs list unchanged; only ci.yml calls notify-failure.yml in this repo (release.yml / release-please.yml / preview.yml do not).
