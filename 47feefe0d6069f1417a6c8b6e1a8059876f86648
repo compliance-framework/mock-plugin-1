@@ -1,3 +1,6 @@
 lisa-design:
 - Group is preview-${{ github.event.pull_request.number || github.ref }}: PR events (including closed/merged PRs, whose github.ref is the base branch) key by PR number; push events have no pull_request so fall back to github.ref, keeping main's group unchanged.
 - cancel-in-progress stays true per spec; only preview.yml changes (Variant B).
+
+lisa-selfreview:
+- Self-review pass 1: approve, no findings. YAML parses; push trigger falls back to github.ref; PR numbers cannot collide with refs/heads/main.
