@@ -1,0 +1,5 @@
+lisa-design:
+- notify job: if: always() + with.needs: ${{ toJSON(needs) }}, so notify-failure.yml sees passes too and can close an open incident thread ("passing again").
+- Reusable workflows stay at @main with workflows-ref: main on purpose (spec W1-S3-MOCK-NOTIFY-CALLERS: do not pin a SHA or v1 in the mocks); CORE-CI-001 mutable-ref does not apply to this deliberate choice.
+- actions: read dropped: notify-failure.yml needs only contents: read (docs/notify.md).
+- Existing comments above workflows-ref kept; no other lines change.
