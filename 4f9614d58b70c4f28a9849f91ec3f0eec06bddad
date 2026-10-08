@@ -1,0 +1,4 @@
+lisa-design:
+- Only `closed` is added to pull_request types; existing types, comments and the v1.3.0 pins are unchanged (spec: no pin changes, no other files).
+- Relies on the shared CI skipping every job on a closed PR, so the extra run only lets notify-failure.yml see the close.
+- `ci:` commit type keeps this out of release-please (no release).
