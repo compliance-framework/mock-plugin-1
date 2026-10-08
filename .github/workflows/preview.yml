@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   preview:
-    uses: compliance-framework/workflows/.github/workflows/preview.yml@main
+    uses: compliance-framework/workflows/.github/workflows/preview.yml@5a81b1ac6081babf702713afb497d5a4f5c662bf # v1.0.0
     with:
       kind: go-plugin
       on-main: false
