@@ -4,7 +4,7 @@ go 1.26.1
 
 require (
 	github.com/compliance-framework/agent v0.9.0
-	github.com/compliance-framework/mock-agent v0.1.0
+	github.com/compliance-framework/mock-agent v0.1.1
 	github.com/hashicorp/go-hclog v1.6.3
 	github.com/hashicorp/go-plugin v1.7.0
 	google.golang.org/protobuf v1.36.11
