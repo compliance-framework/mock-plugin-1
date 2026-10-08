@@ -4,7 +4,8 @@ name: ci
 on:
   pull_request:
     # labeled/unlabeled: release-checks reads the PR labels from the event (release:major-approved).
-    types: [opened, edited, synchronize, reopened, labeled, unlabeled]
+    # closed: notify marks the PR's needs-human card handled and closes its CI incident.
+    types: [opened, edited, synchronize, reopened, labeled, unlabeled, closed]
   push:
     branches: [main]
 
