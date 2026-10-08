@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/compliance-framework/mock-plugin-1/compare/v0.1.1...v0.1.2) (2026-10-08)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#19](https://github.com/compliance-framework/mock-plugin-1/issues/19)) ([7854d7e](https://github.com/compliance-framework/mock-plugin-1/commit/7854d7e28a38bdeea27c676d67c71fc516c98ef6))
+
 ## [0.1.1](https://github.com/compliance-framework/mock-plugin-1/compare/v0.1.0...v0.1.1) (2026-10-08)
 
 
