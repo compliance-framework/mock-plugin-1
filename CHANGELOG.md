@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/compliance-framework/mock-plugin-1/compare/v0.1.2...v0.1.3) (2026-10-09)
+
+
+### Bug Fixes
+
+* **deps:** update module golang.org/x/net to v0.60.0 [security] ([#14](https://github.com/compliance-framework/mock-plugin-1/issues/14)) ([d668506](https://github.com/compliance-framework/mock-plugin-1/commit/d668506d6ded3e60caff715f76431af787119dbc))
+
 ## [0.1.2](https://github.com/compliance-framework/mock-plugin-1/compare/v0.1.1...v0.1.2) (2026-10-08)
 
 
