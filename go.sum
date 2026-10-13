@@ -64,8 +64,8 @@ github.com/cenkalti/backoff/v4 v4.3.0 h1:MyRJ/UdXutAwSAT+s3wNd7MfTIcy71VQueUuFK3
 github.com/cenkalti/backoff/v4 v4.3.0/go.mod h1:Y3VNntkOUPxTVeUxJ/G5vcM//AlwfmyYozVcomhLiZE=
 github.com/cespare/xxhash/v2 v2.3.0 h1:UL815xU9SqsFlibzuggzjXhog7bL6oX9BbNZnL2UFvs=
 github.com/cespare/xxhash/v2 v2.3.0/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
-github.com/compliance-framework/agent v0.9.0 h1:zg4S508qifuInVK/gvo+J1n4DiTFjSZ69cCKxXeadSc=
-github.com/compliance-framework/agent v0.9.0/go.mod h1:jyGyMyqX6OJuVT/3UwbTpp/uE+urFVliSGhy7cMJVBE=
+github.com/compliance-framework/agent v0.9.1 h1:qi1eTY+ZFJc/tYATkHMjPSXtLcLJ14m0TpX9E8LWoZQ=
+github.com/compliance-framework/agent v0.9.1/go.mod h1:oyayjL//RO16mBsinuuumDR19bYK6aKVsb1r63rSSoQ=
 github.com/compliance-framework/api v0.21.0 h1:FFkeg9tUrIPBOt0pbH10NJhoOcdYYhdepyxDltA6mg4=
 github.com/compliance-framework/api v0.21.0/go.mod h1:TrmFnqr+UBvgvKWspYVEnmZSLMyoPbc2i2/jPK7EUww=
 github.com/compliance-framework/mock-agent v0.1.1 h1:RLSWy1usXmKYAIh7Q6+tNXtOaeaZwafiI4I8p9hegAQ=
