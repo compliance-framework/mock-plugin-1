@@ -13,7 +13,7 @@ permissions: {}
 
 jobs:
   ci:
-    uses: compliance-framework/workflows/.github/workflows/ci-go-plugin.yml@7b55019ed36050a57eb8273f6a67fd4b2395adb0 # v1.5.1
+    uses: compliance-framework/workflows/.github/workflows/ci-go-plugin.yml@05d2c3233de6e302c4ff891dde1132d440c081e4 # v1.6.0
     permissions:
       actions: read
       contents: read
@@ -22,14 +22,14 @@ jobs:
     secrets: inherit
 
   release-checks:
-    uses: compliance-framework/workflows/.github/workflows/release-checks.yml@7b55019ed36050a57eb8273f6a67fd4b2395adb0 # v1.5.1
+    uses: compliance-framework/workflows/.github/workflows/release-checks.yml@05d2c3233de6e302c4ff891dde1132d440c081e4 # v1.6.0
     permissions:
       contents: read
 
   notify:
     needs: [ci, release-checks]
     if: always()
-    uses: compliance-framework/workflows/.github/workflows/notify-failure.yml@7b55019ed36050a57eb8273f6a67fd4b2395adb0 # v1.5.1
+    uses: compliance-framework/workflows/.github/workflows/notify-failure.yml@05d2c3233de6e302c4ff891dde1132d440c081e4 # v1.6.0
     with:
       needs: ${{ toJSON(needs) }}
     permissions:
