@@ -1,0 +1,6 @@
+lisa-design:
+- Break chosen: the served binary os.Exit(1)s when Init arrives before Configure. plugin-probe calls only Init (empty request, no Configure), so it records "the plugin exited during Init" and fails; an Init *error* would only be recorded as init_error (informational), so returning an error was rejected.
+- CI misses it on purpose: ci-go-plugin.yml (v1.6.0) runs gofmt, tidy, go test, lint, goreleaser, osv/actionlint/pr-title but not plugin-probe; the binary test calls Configure before Init, and the in-process unit tests build MockPlugin without requireConfigure.
+- The agent itself (cmd/agent.go) always calls Configure before Init, so stack-smoke is not expected to fail; only the probe does.
+- os.Exit over panic: a deterministic exit, not dependent on gRPC's (lack of) panic recovery.
+- Temporary: PR ra/w3-gate-unbreak reverts this commit exactly.
