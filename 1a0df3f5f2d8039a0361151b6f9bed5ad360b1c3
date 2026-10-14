@@ -4,3 +4,8 @@ lisa-design:
 - The agent itself (cmd/agent.go) always calls Configure before Init, so stack-smoke is not expected to fail; only the probe does.
 - os.Exit over panic: a deterministic exit, not dependent on gRPC's (lack of) panic recovery.
 - Temporary: PR ra/w3-gate-unbreak reverts this commit exactly.
+
+lisa-selfreview:
+Pass 1 (verdict approve; gofmt, go vet, go test, golangci-lint v2.11.4 with the shared v1.6.0 config, go mod tidy and goreleaser build --snapshot all clean locally):
+- CORE-TEST-001 (dismissed): no unit test for the Init-before-Configure exit. The change is a deliberate, temporary gate fixture reverted by ra/w3-gate-unbreak; it is verified by running cmd/plugin-probe against the built binary (fails: "the plugin exited during Init").
+- CORE-DOC-001 (deferred): README still says Init registers the subject template without mentioning the exit; the code comment documents it and the revert PR removes it, so README is left untouched to keep the revert exact and small.
