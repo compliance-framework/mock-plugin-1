@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.3](https://github.com/compliance-framework/mock-plugin-1/compare/v0.1.2...v0.1.3) (2026-10-14)
+
+
+### Bug Fixes
+
+* **deps:** bump agent to v0.9.1, workflows to v1.6.0 ([#35](https://github.com/compliance-framework/mock-plugin-1/issues/35)) ([140c5a4](https://github.com/compliance-framework/mock-plugin-1/commit/140c5a4ec1b058e7a99e5be2b4e0d0bb2665029c))
+* **deps:** bump mock-agent to v0.1.2 ([#36](https://github.com/compliance-framework/mock-plugin-1/issues/36)) ([e2deda9](https://github.com/compliance-framework/mock-plugin-1/commit/e2deda9271a285041e1460ed12a63c7462433d1b))
+* **deps:** update module golang.org/x/net to v0.60.0 [security] ([#14](https://github.com/compliance-framework/mock-plugin-1/issues/14)) ([d668506](https://github.com/compliance-framework/mock-plugin-1/commit/d668506d6ded3e60caff715f76431af787119dbc))
+
 ## [0.1.2](https://github.com/compliance-framework/mock-plugin-1/compare/v0.1.1...v0.1.2) (2026-10-08)
 
 
