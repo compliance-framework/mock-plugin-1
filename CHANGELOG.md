@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.4](https://github.com/compliance-framework/mock-plugin-1/compare/v0.1.3...v0.1.4) (2026-10-14)
+
+
+### Bug Fixes
+
+* **deps:** update security fixes (gomod) [security] ([#38](https://github.com/compliance-framework/mock-plugin-1/issues/38)) ([d5bb0ce](https://github.com/compliance-framework/mock-plugin-1/commit/d5bb0cec92bfd9bb090e211e07f5703f2832085e))
+* make the probe fail (W3 gate failure test) ([#40](https://github.com/compliance-framework/mock-plugin-1/issues/40)) ([4917783](https://github.com/compliance-framework/mock-plugin-1/commit/4917783d8a087673e1adfabdcb2038e6c3fe0179))
+
 ## [0.1.3](https://github.com/compliance-framework/mock-plugin-1/compare/v0.1.2...v0.1.3) (2026-10-14)
 
 
