@@ -1,0 +1,2 @@
+lisa-design:
+Pins chosen as the newest mutually consistent affected set: x/net v0.59.0 needs crypto v0.57.0 and crypto v0.55.0 needs text v0.41.0 (both fixed), so x/net v0.57.0, x/crypto v0.54.0, x/text v0.40.0, grpc v1.83.1. osv-scanner.toml ignores the added advisories until 2026-10-28 (coordinator decision) so the CI vulns job passes; GO-2026-5932 is already on main and not ignored. Test-only; remove after the Renovate test.
