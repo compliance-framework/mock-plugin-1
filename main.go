@@ -6,6 +6,8 @@ package main
 import (
 	"context"
 	"errors"
+	"os"
+	"sync/atomic"
 
 	policyManager "github.com/compliance-framework/agent/policy-manager"
 	"github.com/compliance-framework/agent/runner"
@@ -30,6 +32,12 @@ var (
 type MockPlugin struct {
 	logger     hclog.Logger
 	policyData map[string]interface{}
+
+	// W3 gate failure test (deliberate, reverted by the next release): the served binary
+	// exits if Init comes before Configure. The agent always configures a plugin first, but
+	// plugin-probe calls only Init, so the probe reports "the plugin exited during Init".
+	requireConfigure bool
+	configured       atomic.Bool
 }
 
 // Name implements mock-agent's runner.Plugin.
@@ -40,6 +48,7 @@ func (p *MockPlugin) Name() string {
 // Configure accepts any configuration; it keeps only the policy data, for later Evals.
 func (p *MockPlugin) Configure(req *proto.ConfigureRequest) (*proto.ConfigureResponse, error) {
 	p.logger.Debug("Configured", "config_keys", len(req.GetConfig()))
+	p.configured.Store(true)
 	if policyData := req.GetPolicyData(); policyData != nil {
 		p.policyData = policyData.AsMap()
 	} else {
@@ -68,6 +77,10 @@ func subjectTemplates() []*proto.SubjectTemplate {
 
 // Init registers the subject template, and the risk templates of each policy path.
 func (p *MockPlugin) Init(req *proto.InitRequest, apiHelper runner.ApiHelper) (*proto.InitResponse, error) {
+	if p.requireConfigure && !p.configured.Load() {
+		p.logger.Error("Init called before Configure; exiting (W3 gate failure test)")
+		os.Exit(1)
+	}
 	return runner.InitWithSubjectsAndRisksFromPolicies(context.Background(), p.logger, req, apiHelper, subjectTemplates())
 }
 
@@ -150,7 +163,7 @@ func main() {
 		HandshakeConfig: runner.HandshakeConfig,
 		Plugins: map[string]goplugin.Plugin{
 			"runner": &runner.RunnerV2GRPCPlugin{
-				Impl: &MockPlugin{logger: logger},
+				Impl: &MockPlugin{logger: logger, requireConfigure: true},
 			},
 		},
 		GRPCServer: goplugin.DefaultGRPCServer,
