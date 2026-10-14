@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/compliance-framework/mock-plugin-1/compare/v0.1.4...v0.1.5) (2026-10-14)
+
+
+### Bug Fixes
+
+* restore the probe (W3 gate failure test) ([#42](https://github.com/compliance-framework/mock-plugin-1/issues/42)) ([8853ce1](https://github.com/compliance-framework/mock-plugin-1/commit/8853ce1f2ab0f7667b7471509f75336bbe9e1f0d))
+
 ## [0.1.4](https://github.com/compliance-framework/mock-plugin-1/compare/v0.1.3...v0.1.4) (2026-10-14)
 
 
