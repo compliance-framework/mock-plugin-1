@@ -1,0 +1,2 @@
+lisa-design:
+- ra/w3-gate-unbreak is `git revert` of the break commit, nothing else: its tree equals main's at the time it was cut, so after PR A merges it restores the probe-passing binary.
